@@ -40,6 +40,7 @@ body{
     background-color: var(--color-dark);
     color: var(--color-light);
 
+    min-height: 100vh;
     margin-inline: 0;
     /* padding: var(--s1); */
 }
@@ -63,6 +64,6 @@ body{
     background-color: var(--color-dark)
 } 
 
-/* .box.invert {
+.box.invert {
     filter: invert(100%);
-} */
+}
