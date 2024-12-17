@@ -1,30 +1,13 @@
-
 :root {
-    font-family: sans-serif;
-
-    box-sizing: border-box;
-
     --color-dark: #050505;
-    --color-darkish: #404040;
-    --color-lightish: #e6e6e6;
     --color-light: #fafafa;
-    --color-mid: grey;
-    
-    /* background-color: var(--color-dark);
-    color: var(--color-light); */
-    
-    --ratio: 1.4;
-    
-    --line-height: var(--ratio);
-    line-height: var(--ratio);
-    --line-height-small: calc(0.8*var(--ratio));
+    --color-accent: orange;
 
     --s-5: clamp(0.33rem,0.39rem + -0.29vw,0.18rem);
     --s-4: clamp(0.41rem,0.47rem + -0.31vw,0.25rem);
     --s-3: clamp(0.51rem,0.57rem + -0.31vw,0.35rem);
     --s-2: clamp(0.64rem,0.69rem + -0.27vw,0.5rem);
     --s-1: clamp(0.8rem,0.84rem + -0.18vw,0.71rem);
-    /* define a range; minimum, scaling factor (+vw(1vw=1%))for dynamic adjustment, maximum */
     --s0: clamp(1rem,1rem + 0vw,1rem);
     --s1: clamp(1.25rem,1.19rem + 0.32vw,1.41rem);
     --s2: clamp(1.56rem,1.39rem + 0.85vw,2rem);
@@ -32,34 +15,40 @@
     --s4: clamp(2.44rem,1.83rem + 3.04vw,4rem);
     --s5: clamp(3.05rem,2.04rem + 5.07vw,5.65rem);
 
-    
     --border-thin: var(--s-5);
     --border-thick: var(--s-2);
     
     --measure: 65ch;
 }
 
+html {
+    box-sizing: border-box;
+}
+
+ *,
+ *::before,
+ *::after {
+     box-sizing: inherit;
+ }
+
+ /* Exception-based styling ----------------------- */
+blockquote, body, dd, dl, figure, h1, h2, h3, h4, p {
+    margin-block: 0;
+}
+
+body{
+    background-color: var(--color-dark);
+    color: var(--color-light);
+
+    margin-inline: 0;
+    /* padding: var(--s1); */
+}
+
 
 .box {
-    /* ↓ Padding set to the first point on the modular scale */
-    /* It is applied to all sides, and has the singular purpose of moving the Box's content away from its edges.  */
     padding: var(--s1);
-
-    /* ↓ Assumes you have a --border-thin var */
-    /* border should be applied on all sides or none at all */
     border: var(--border-thin) solid;
 
-    /* ↓ Always apply the transparent outline, for high contrast mode */
-    outline: var(--border-thin) transparent;
-    outline-offset: calc(var(--border-thin) * -1);
-    /* In the absence of a border, a background-color is insufficient for describing a box shape. 
-    This is because high contrast themes tend to eliminate backgrounds. 
-    However, by employing a transparent outline the box shape can be restored.  */
-
-    /* ↓ The light and dark color vars
-    Custom properties make it possible to adjust the specific light and dark values in one place. 
-    --color-light: #eee;
-    --color-dark: #222; */
     color: var(--color-dark);
     background-color: var(--color-light);
 } 
@@ -71,10 +60,9 @@
     By forcing inheritance, you can change the color—along with the background-color—in one place: on the Box itself. 
     */
     color: inherit;
+    background-color: var(--color-dark)
 } 
 
-.box.invert {
-    /* ↓ The color vars inverted */
-    color: var(--color-light);
-    background-color: var(--color-dark);
-}
+/* .box.invert {
+    filter: invert(100%);
+} */
