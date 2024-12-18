@@ -38,7 +38,6 @@ blockquote, body, dd, dl, figure, h1, h2, h3, h4, p {
 
 body{
     background-color: var(--color-dark);
-    color: var(--color-light);
 
     min-height: 100vh;
     margin-inline: 0;
@@ -50,8 +49,8 @@ body{
     padding: var(--s1);
     border: var(--border-thin) solid;
 
-    color: var(--color-dark);
-    background-color: var(--color-light);
+    background-color: var(--color-dark);
+    color: var(--color-light);
 } 
     
 .box * {
